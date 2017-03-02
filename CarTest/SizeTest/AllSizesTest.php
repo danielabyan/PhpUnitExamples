@@ -10,11 +10,32 @@ use Car\Size\SizeInterface;
 use Car\Size\SubCompact;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Class AllSizesTest
+ * @package Car\SizeTest
+ */
 class AllSizesTest extends TestCase
 {
     /**
      * @dataProvider validSizeProvider
      * @test
+     * @covers       Large::__construct
+     * @covers       Large::getMinSize
+     * @covers       Large::getMaxSize
+     * @covers       Compact::__construct
+     * @covers       Compact::getMinSize
+     * @covers       Compact::getMaxSize
+     * @covers       MiniCompact::__construct
+     * @covers       MiniCompact::getMinSize
+     * @covers       MiniCompact::getMaxSize
+     * @covers       Minivan::__construct
+     * @covers       Minivan::getMinSize
+     * @covers       Minivan::getMaxSize
+     * @covers       SubCompact::__construct
+     * @covers       SubCompact::getMinSize
+     * @covers       SubCompact::getMaxSize
+     * @uses         Size3D::getMinSize
+     * @uses         Size3D::getMaxSize
      */
     public function canBeCreateAllSizesWithValidArguments(string $className, Size3D $minSize, Size3D $maxSize)
     {

@@ -6,8 +6,15 @@ use Car\Type\Economy;
 use Car\Type\TypeInterface;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Class EconomyTest
+ * @package Car\TestType
+ */
 class EconomyTest extends TestCase
 {
+    /**
+     * @covers Economy::__construct
+     */
     public function testIsTypeInterface()
     {
         $economy = new Economy();

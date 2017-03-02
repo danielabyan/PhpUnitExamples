@@ -14,6 +14,10 @@ class AllTypesTest extends TestCase
 
     /**
      * @requires PHPUnit 6.0
+     * @covers Luxury::__construct
+     * @covers Family::__construct
+     * @covers Economy::__construct
+     * @covers Sport::__construct
      */
     public function testForTypeInterface()
     {

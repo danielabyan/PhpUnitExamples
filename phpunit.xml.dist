@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phpunit
+        bootstrap="bootstrap.php"
+        colors="true"
+        verbose="true">
+    <testsuites>
+        <testsuite name="Test Car">
+            <directory>CarTest/</directory>
+        </testsuite>
+    </testsuites>
+    <logging>
+        <log type="junit" target="logs/junit.xml"/>
+    </logging>
+</phpunit>

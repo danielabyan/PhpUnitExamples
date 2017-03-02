@@ -10,6 +10,10 @@ use Car\Type\Luxury;
 use Car\Type\TypeInterface;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Class CarBuilderTest
+ * @package CarTest
+ */
 class CarBuilderTest extends TestCase
 {
     /** @var SizeInterface */
@@ -38,6 +42,11 @@ class CarBuilderTest extends TestCase
 
     /**
      * @group critical
+     * @covers CarBuilder::build
+     * @covers CarBuilder::getCar
+     * @uses CarBuilder::setBrandName
+     * @uses CarBuilder::setSize
+     * @uses CarBuilder::setType
      */
     public function testCarBuilding()
     {

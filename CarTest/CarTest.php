@@ -6,17 +6,17 @@ use Car\Car;
 use Car\Common\PriceCalculator;
 use Car\InvalidArgumentException;
 use Car\Size\Large;
-use Car\Size\SizeInterface;
 use Car\Type\Luxury;
-use Car\Type\TypeInterface;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Class CarTest
+ * @package CarTest
+ */
 class CarTest extends TestCase
 {
-    /** @var SizeInterface */
     private $carSize;
 
-    /** @var TypeInterface */
     private $carType;
 
     public function setUp()
@@ -25,10 +25,19 @@ class CarTest extends TestCase
         $this->carSize = new Large();
     }
 
+    public function tearDown()
+    {
+        unset($this->carSize);
+        unset($this->carType);
+    }
+
     /**
-     * @return string
+     * @covers Car::__construct
+     * @uses   Car::getBrandName
+     * @uses   Car::getType
+     * @uses   Car::getSize
      */
-    public function testValidCarBrandName(): string
+    public function testValidCarBrandName()
     {
         $carName = 'Mercedes CLS 550';
 
@@ -40,40 +49,45 @@ class CarTest extends TestCase
         $this->assertSame($carName, $car->getBrandName());
         $this->assertEquals($this->carType, $car->getType());
         $this->assertEquals($this->carSize, $car->getSize());
-
-        return $carName;
     }
 
     /**
-     * @depends testValidCarBrandName
-     * @group critical
+     * @covers Car::getPrice
+     * @uses   Car::__construct
+     * @uses   PriceCalculator::__construct
+     * @uses   PriceCalculator::calculate
      */
-    public function testIsValidCarPriceReturn(string $carName)
+    public function testIsValidCarPriceReturn()
     {
-        $car = new Car($carName, $this->carType, $this->carSize);
+        $car = new Car('Mercedes CLS 550', $this->carType, $this->carSize);
         $priceCalculator = new PriceCalculator($this->carSize, $this->carType);
 
         $this->assertEquals($priceCalculator->calculate(), $car->getPrice());
     }
 
     /**
-     * @depends testValidCarBrandName
-     * @group critical
+     * @covers Car::__construct
      */
-    public function testCanBeCreateClassWithValidArguments(string $carName)
+    public function testCanBeCreateClassWithValidArguments()
     {
-        $car = new Car($carName, $this->carType, $this->carSize);
+        $car = new Car('Mercedes CLS 550', $this->carType, $this->carSize);
         $this->assertInstanceOf(
             Car::class, $car
         );
     }
 
+    /**
+     * @covers Car::__construct
+     */
     public function testCannotCreateCarWithoutArguments()
     {
         $this->expectException(\Error::class);
         new Car();
     }
 
+    /**
+     * @covers Car::__construct
+     */
     public function testCannotCreateCarWithInvalidName()
     {
         $this->expectException(InvalidArgumentException::class);
@@ -90,20 +104,13 @@ class CarTest extends TestCase
     }
 
     /**
-     * @expectedException \Car\InvalidArgumentException
-     * @expectedExceptionMessage {Brand name} can't be empty
+     * @covers Car::__construct
      */
     public function testCannotCreateCarWithEmptyBrandName()
     {
-        new Car('', $this->carType, $this->carSize);
-    }
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage("{Brand name} can't be empty");
 
-    /**
-     * @afterClass
-     */
-    public function clean()
-    {
-        unset($this->carSize);
-        unset($this->carType);
+        new Car('', $this->carType, $this->carSize);
     }
 }

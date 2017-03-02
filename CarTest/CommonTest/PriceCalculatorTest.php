@@ -7,9 +7,18 @@ use Car\Size\Large;
 use Car\Type\Luxury;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Class PriceCalculatorTest
+ * @package CarTest\CommonTest
+ */
 class PriceCalculatorTest extends TestCase
 {
 
+    /**
+     * @covers PriceCalculator::__construct
+     * @uses   Large::__construct
+     * @uses   Luxury::__construct
+     */
     public function testCanBeCreateValidClass()
     {
         $carLargeSize = new Large();
@@ -25,6 +34,10 @@ class PriceCalculatorTest extends TestCase
 
     /**
      * @group critical
+     * @covers PriceCalculator::calculate
+     * @uses   PriceCalculator::__construct
+     * @uses   Large::__construct
+     * @uses   Luxury::__construct
      */
     public function testIsValidCalculatedPrice()
     {
