@@ -13,7 +13,7 @@ class Size3DTest extends TestCase
 {
     /**
      * @requires PHP 7.0
-     * @covers Size3D::__construct
+     * @covers Car\Common\Size3D::__construct
      */
     public function testCanBeCreateValid3DSize()
     {
@@ -34,7 +34,7 @@ class Size3DTest extends TestCase
     /**
      * @expectedException           InvalidArgumentException
      * @expectedExceptionMessage    {Size} can't be negative number
-     * @covers Size3D::__construct
+     * @covers Car\Common\Size3D::__construct
      */
     public function testCannotBeCreateWithNegativeSize()
     {
@@ -42,7 +42,7 @@ class Size3DTest extends TestCase
     }
 
     /**
-     * @covers Size3D::__construct
+     * @covers Car\Common\Size3D::__construct
      */
     public function testSizesCannotBeCreateSize3DWithoutConstructorArguments()
     {
@@ -52,10 +52,10 @@ class Size3DTest extends TestCase
     }
 
     /**
-     * @covers Size3D::getWidth
-     * @covers Size3D::getHeight
-     * @covers Size3D::getDepth
-     * @uses   Size3D::__construct
+     * @covers Car\Common\Size3D::getWidth
+     * @covers Car\Common\Size3D::getHeight
+     * @covers Car\Common\Size3D::getDepth
+     * @uses   Car\Common\Size3D::__construct
      */
     public function testCanBeSetValidSizes()
     {
@@ -70,10 +70,10 @@ class Size3DTest extends TestCase
     }
 
     /**
-     * @covers Size3D::getWidth
-     * @covers Size3D::getHeight
-     * @covers Size3D::getDepth
-     * @uses   Size3D::__construct
+     * @covers Car\Common\Size3D::getWidth
+     * @covers Car\Common\Size3D::getHeight
+     * @covers Car\Common\Size3D::getDepth
+     * @uses   Car\Common\Size3D::__construct
      */
     public function testIsNumericValues()
     {

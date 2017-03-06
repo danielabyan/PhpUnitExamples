@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
 class CompactTest extends TestCase
 {
     /**
-     * @covers Compact::__construct
+     * @covers Car\Size\Compact::__construct
      */
     public function testIsSizeInterfaceInstance()
     {

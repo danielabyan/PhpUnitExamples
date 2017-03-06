@@ -15,7 +15,7 @@ class LargeTest extends TestCase
 {
 
     /**
-     * @covers Large::__construct
+     * @covers Car\Size\Large::__construct
      */
     public function testIsSizeInterfaceInstance()
     {

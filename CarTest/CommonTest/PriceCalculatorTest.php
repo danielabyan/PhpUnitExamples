@@ -15,9 +15,8 @@ class PriceCalculatorTest extends TestCase
 {
 
     /**
-     * @covers PriceCalculator::__construct
-     * @uses   Large::__construct
-     * @uses   Luxury::__construct
+     * @covers Car\Common\PriceCalculator::__construct
+     * @uses   Car\Size\Large::__construct
      */
     public function testCanBeCreateValidClass()
     {
@@ -34,10 +33,9 @@ class PriceCalculatorTest extends TestCase
 
     /**
      * @group critical
-     * @covers PriceCalculator::calculate
-     * @uses   PriceCalculator::__construct
-     * @uses   Large::__construct
-     * @uses   Luxury::__construct
+     * @covers Car\Common\PriceCalculator::calculate
+     * @uses   Car\Common\PriceCalculator::__construct
+     * @uses   Car\Size\Large::__construct
      */
     public function testIsValidCalculatedPrice()
     {

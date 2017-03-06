@@ -12,9 +12,6 @@ use PHPUnit\Framework\TestCase;
  */
 class LuxuryTest extends TestCase
 {
-    /**
-     * @covers Luxury::__construct
-     */
     public function testIsTypeInterface()
     {
         $luxury = new Luxury();

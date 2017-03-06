@@ -12,9 +12,6 @@ use PHPUnit\Framework\TestCase;
  */
 class EconomyTest extends TestCase
 {
-    /**
-     * @covers Economy::__construct
-     */
     public function testIsTypeInterface()
     {
         $economy = new Economy();

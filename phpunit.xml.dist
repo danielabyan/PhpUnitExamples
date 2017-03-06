@@ -5,10 +5,19 @@
         verbose="true">
     <testsuites>
         <testsuite name="Test Car">
-            <directory>CarTest/</directory>
+            <directory suffix=".php">CarTest/</directory>
         </testsuite>
     </testsuites>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">CarTest</directory>
+        </whitelist>
+    </filter>
     <logging>
         <log type="junit" target="logs/junit.xml"/>
+        <log type="coverage-html" target="logs/coverage" charset="UTF-8" yui="true" highlight="true"/>
+        <log type="coverage-text" target="logs/coverage.txt"/>
+        <log type="coverage-clover" target="logs/clover.xml"/>
+        <log type="testdox-html" target="logs/testdox.html"/>
     </logging>
 </phpunit>

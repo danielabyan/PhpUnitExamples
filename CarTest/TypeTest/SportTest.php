@@ -12,9 +12,6 @@ use PHPUnit\Framework\TestCase;
  */
 class SportTest extends TestCase
 {
-    /**
-     * @covers Sport::__construct
-     */
     public function testIsTypeInterface()
     {
         $sport = new Sport();

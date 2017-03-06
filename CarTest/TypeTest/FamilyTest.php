@@ -12,9 +12,6 @@ use PHPUnit\Framework\TestCase;
  */
 class FamilyTest extends TestCase
 {
-    /**
-     * @covers Family::__construct
-     */
     public function testIsTypeInterface()
     {
         $family = new Family();

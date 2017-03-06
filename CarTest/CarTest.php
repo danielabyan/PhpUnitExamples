@@ -32,10 +32,10 @@ class CarTest extends TestCase
     }
 
     /**
-     * @covers Car::__construct
-     * @uses   Car::getBrandName
-     * @uses   Car::getType
-     * @uses   Car::getSize
+     * @covers Car\Car::__construct
+     * @uses   Car\Car::getBrandName
+     * @uses   Car\Car::getType
+     * @uses   Car\Car::getSize
      */
     public function testValidCarBrandName()
     {
@@ -52,10 +52,10 @@ class CarTest extends TestCase
     }
 
     /**
-     * @covers Car::getPrice
-     * @uses   Car::__construct
-     * @uses   PriceCalculator::__construct
-     * @uses   PriceCalculator::calculate
+     * @covers Car\Car::getPrice
+     * @uses   Car\Car::__construct
+     * @uses   Car\Common\PriceCalculator::__construct
+     * @uses   Car\Common\PriceCalculator::calculate
      */
     public function testIsValidCarPriceReturn()
     {
@@ -66,7 +66,7 @@ class CarTest extends TestCase
     }
 
     /**
-     * @covers Car::__construct
+     * @covers Car\Car::__construct
      */
     public function testCanBeCreateClassWithValidArguments()
     {
@@ -77,7 +77,7 @@ class CarTest extends TestCase
     }
 
     /**
-     * @covers Car::__construct
+     * @covers Car\Car::__construct
      */
     public function testCannotCreateCarWithoutArguments()
     {
@@ -86,7 +86,7 @@ class CarTest extends TestCase
     }
 
     /**
-     * @covers Car::__construct
+     * @covers Car\Car::__construct
      */
     public function testCannotCreateCarWithInvalidName()
     {
@@ -104,7 +104,7 @@ class CarTest extends TestCase
     }
 
     /**
-     * @covers Car::__construct
+     * @covers Car\Car::__construct
      */
     public function testCannotCreateCarWithEmptyBrandName()
     {

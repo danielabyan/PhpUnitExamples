@@ -47,10 +47,10 @@ class CarTestWithAnnotations extends TestCase
     }
 
     /**
-     * @covers Car::__construct
-     * @uses   Car::getBrandName
-     * @uses   Car::getType
-     * @uses   Car::getSize
+     * @covers Car\Car::__construct
+     * @uses   Car\Car::getBrandName
+     * @uses   Car\Car::getType
+     * @uses   Car\Car::getSize
      */
     public function testValidCarBrandName(): string
     {
@@ -71,10 +71,10 @@ class CarTestWithAnnotations extends TestCase
     /**
      * @depends testValidCarBrandName
      * @group critical
-     * @covers Car::getPrice
-     * @uses   Car::__construct
-     * @uses   PriceCalculator::__construct
-     * @uses   PriceCalculator::calculate
+     * @covers Car\Car::getPrice
+     * @uses   Car\Car::__construct
+     * @uses   Car\Common\PriceCalculator::__construct
+     * @uses   Car\Common\PriceCalculator::calculate
      */
     public function testIsValidCarPriceReturn(string $carName)
     {
@@ -87,7 +87,7 @@ class CarTestWithAnnotations extends TestCase
     /**
      * @depends testValidCarBrandName
      * @group critical
-     * @covers Car::__construct
+     * @covers Car\Car::__construct
      */
     public function testCanBeCreateClassWithValidArguments(string $carName)
     {
@@ -99,7 +99,7 @@ class CarTestWithAnnotations extends TestCase
 
     /**
      * @expectedException \Error
-     * @covers Car::__construct
+     * @covers Car\Car::__construct
      */
     public function testCannotCreateCarWithoutArguments()
     {
@@ -107,7 +107,7 @@ class CarTestWithAnnotations extends TestCase
     }
 
     /**
-     * @covers Car::__construct
+     * @covers Car\Car::__construct
      */
     public function testCannotCreateCarWithInvalidName()
     {
@@ -127,7 +127,7 @@ class CarTestWithAnnotations extends TestCase
     /**
      * @expectedException \Car\InvalidArgumentException
      * @expectedExceptionMessage {Brand name} can't be empty
-     * @covers Car::__construct
+     * @covers Car\Car::__construct
      */
     public function testCannotCreateCarWithEmptyBrandName()
     {

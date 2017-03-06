@@ -14,7 +14,7 @@ class MiniCompactTest extends TestCase
 {
 
     /**
-     * @covers MiniCompact::__construct
+     * @covers Car\Size\MiniCompact::__construct
      */
     public function testIsSizeInterfaceInstance()
     {

@@ -14,7 +14,7 @@ class SubCompactTest extends TestCase
 {
 
     /**
-     * @covers SubCompact::__construct
+     * @covers Car\Size\SubCompact::__construct
      */
     public function testIsSizeInterfaceInstance()
     {

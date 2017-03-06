@@ -42,11 +42,11 @@ class CarBuilderTest extends TestCase
 
     /**
      * @group critical
-     * @covers CarBuilder::build
-     * @covers CarBuilder::getCar
-     * @uses CarBuilder::setBrandName
-     * @uses CarBuilder::setSize
-     * @uses CarBuilder::setType
+     * @covers Car\CarBuilder::build
+     * @covers Car\CarBuilder::getCar
+     * @uses Car\CarBuilder::setBrandName
+     * @uses Car\CarBuilder::setSize
+     * @uses Car\CarBuilder::setType
      */
     public function testCarBuilding()
     {
